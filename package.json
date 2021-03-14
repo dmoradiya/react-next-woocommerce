@@ -4,13 +4,16 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "next"
+    "dev": "nodemon server.js"
   },
   "author": "Dharmesh Moradiya",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "next": "^10.0.8",
+    "nodemon": "^2.0.7",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "woocommerce-api": "^1.5.0"
   }
 }
