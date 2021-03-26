@@ -1,6 +1,6 @@
 const wooConfig = {
-    siteUrl:'http://woo.unaux.com/',
-    consumerKey: 'ck_2f3105f064e9a4e1655313dfbc9d3857d68f1850',
-    consumerSecret: 'cs_90c226439451e3639f68e64c392e190d8ca72320'
+    siteUrl:'http://localhost/woo-next/',
+    consumerKey: 'ck_243fd4d4068cbfb572eaf0fcd5248d7d754f5213',
+    consumerSecret: 'cs_ed6b048934322f82e6fcc94a1bfb6b1f81005ddd'
 };
 module.exports = wooConfig;
