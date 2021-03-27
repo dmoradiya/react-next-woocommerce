@@ -12,7 +12,7 @@ var WooCommerce = new WooCommerceAPI({
   consumerKey: wooConfig.consumerKey,
   consumerSecret: wooConfig.consumerSecret,
   wpAPI: true,
-  version: 'wc/v1'
+  version: 'wc/v2'
 });
 
 const port = 3000;
