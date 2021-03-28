@@ -1,7 +1,8 @@
 import Layout from "../components/Layout";
 import Product from "../components/Products";
 import client from "./../components/ApolloClient";
-import gql from "graphql-tag";
+//import gql from "graphql-tag";
+import { gql } from '@apollo/client';
 
 const PRODUCT_QUERY = gql`query {
     products(first: 100) {
@@ -17,7 +18,20 @@ const PRODUCT_QUERY = gql`query {
             srcSet
             sourceUrl
           } 
-          
+          ... on SimpleProduct {
+            price
+            metaData {
+                key
+                value
+              }
+            }
+            ... on ExternalProduct {
+                price
+                    metaData {
+                    key
+                    value
+                    }
+                }
         }
       }
 }`;
