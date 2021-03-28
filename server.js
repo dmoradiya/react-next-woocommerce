@@ -25,7 +25,7 @@ const handle = app.getRequestHandler()
 //Prepare our App
 app.prepare().then(() => {
     const server = express();
-    // Create Route to display all products
+    //Create Route to display all products
     server.get('/products', (req, response) => {
         WooCommerce.get("products", function(err, data, res ) {
             response.json( JSON.parse(res) );

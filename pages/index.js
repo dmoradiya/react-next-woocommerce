@@ -4,19 +4,20 @@ import client from "./../components/ApolloClient";
 import gql from "graphql-tag";
 
 const PRODUCT_QUERY = gql`query {
-    products(first: 20) {
+    products(first: 100) {
         nodes {
           id
           slug
           description
+          name
+          databaseId
           image {
             uri
             title
             srcSet
             sourceUrl
-          }
-          name
-         
+          } 
+          
         }
       }
 }`;
@@ -29,9 +30,9 @@ const Index = ( props) => {
 
     return (
         <Layout>
-            {/* { products.length ? (
+            { products.length ? (
                 products.map( product => <Product  product={ product } key={ product.id } /> )
-            ) : '' } */}
+            ) : '' }
         </Layout>
 
     );
