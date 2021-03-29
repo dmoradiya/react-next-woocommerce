@@ -43,26 +43,27 @@ const Product = withRouter( props => {
     return (
         <Layout>
             { product ? (
-               <div className="card mb-3" >
-               <h3 className="card-header">{ product.name }</h3>
-               <a>
-                    <img width="400" height="400"
-                    src={ product.image.sourceUrl }
-                    alt="Product image"/>
-                </a>
-               <div className="card-body">
-                   <h5 className="card-subtitle text-muted">{ product.price }</h5>
-               </div>    
-           </div>
-                
-            ) : '' }
+				<div className="woo-next-single">
+					<div className="woo-next-single__product card bg-light mb-3 p-5">
+						<div className="card-header">{ product.name }</div>
+						<div className="card-body">
+							<h4 className="card-title">{ product.name }</h4>
+							<img src={ product.image.sourceUrl } alt="Product Image" width="200" srcSet={ product.image.srcSet }/>
+							<div className="card-text">{ product.description }</div>
+						</div>
+                        <div className="card-body">
+                            <h5 className="card-subtitle text-muted">Price : { product.price }</h5>
+                        </div>
+					</div>
+				</div>
+			) : '' }
         </Layout>
 
     );
 });
 // getIntialProps runs server side and client side
 Product.getInitialProps = async ( context ) => {
-    //console.warn(context);
+    console.warn(context);
     let { query: { slug } } = context;
     const id = slug ? parseInt( slug.split( '-' ).pop() ) : context.query.id;
     
