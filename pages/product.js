@@ -42,8 +42,19 @@ const Product = withRouter( props => {
 
     return (
         <Layout>
-            { product.length ? (
-                product.map( product => <Product  product={ product } key={ product.id } /> )
+            { product ? (
+               <div className="card mb-3" >
+               <h3 className="card-header">{ product.name }</h3>
+               <a>
+                    <img width="400" height="400"
+                    src={ product.image.sourceUrl }
+                    alt="Product image"/>
+                </a>
+               <div className="card-body">
+                   <h5 className="card-subtitle text-muted">{ product.price }</h5>
+               </div>    
+           </div>
+                
             ) : '' }
         </Layout>
 
@@ -51,7 +62,7 @@ const Product = withRouter( props => {
 });
 // getIntialProps runs server side and client side
 Product.getInitialProps = async ( context ) => {
-    console.warn(context);
+    //console.warn(context);
     let { query: { slug } } = context;
     const id = slug ? parseInt( slug.split( '-' ).pop() ) : context.query.id;
     
