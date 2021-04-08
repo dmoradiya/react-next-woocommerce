@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import { withRouter } from 'next/router';
 import clientConfig from '../client-config';
 import fetch from 'isomorphic-unfetch';
+import AddToCartButton from "../components/cart/AddToCartButton";
 
 
 const Product = withRouter( props => {
@@ -22,6 +23,7 @@ const Product = withRouter( props => {
 						</div>
                         <div className="card-body">
                             <h5 className="card-subtitle text-muted">Price : { product.price }</h5>
+                            <AddToCartButton product={product} />
                         </div>
 					</div>
 				</div>
