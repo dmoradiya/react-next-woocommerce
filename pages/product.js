@@ -16,9 +16,8 @@ const Product = withRouter( props => {
 				<div className="woo-next-single">
 					<div className="woo-next-single__product card bg-light mb-3 p-5">
 						<div className="card-header">{ product.name }</div>
-						<div className="card-body">
-							<h4 className="card-title">{ product.name }</h4>
-							<img src={ product.images[0].src } alt="Product Image"  srcSet={ product.images[0].name }/>
+						<div className="card-body">							
+							<img width="400" height="400" src={ product.images[0].src } alt={ product.images[0].alt }  />
 							<div className="card-text">{ product.description }</div>
 						</div>
                         <div className="card-body">
