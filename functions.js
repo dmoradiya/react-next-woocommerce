@@ -6,7 +6,8 @@
  */
  export const getFloatVal = ( string ) => {
 
-	let floatValue = string.match( /[+-]?\d+(\.\d+)?/g )[0];
+	//let floatValue = string.match( /[+-]?\d+(\.\d+)?/g )[0];
+	let floatValue = string;
 	return ( null !== floatValue ) ? parseFloat( parseFloat( floatValue ).toFixed( 2 ) ) : '';
 
 };
@@ -46,8 +47,8 @@ export const addFirstProduct = ( product ) => {
 export const createNewProduct = ( product, productPrice, qty ) => {
 
 	return  {
-		productId: product.productId,
-		image: product.image,
+		productId: product.id,
+		image: product.images[0].src,
 		name: product.name,
 		price: productPrice,
 		qty,
@@ -104,7 +105,7 @@ export const updateCart = ( existingCart, product, qtyToBeAdded, newQty = false 
 export const getUpdatedProducts = ( existingProductsInCart, product, qtyToBeAdded, newQty = false ) => {
 
 	// Check if the product already exits in the cart.
-	const productExitsIndex = isProductInCart( existingProductsInCart, product.productId );
+	const productExitsIndex = isProductInCart( existingProductsInCart, product.id );
 
 	// If product exits ( index of that product found in the array ), update the product quantity and totalPrice
 	if ( -1 < productExitsIndex ) {
