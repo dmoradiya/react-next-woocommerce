@@ -1,3 +1,4 @@
+import CartIcon from "./cart/CartIcon"
 
 const Nav = () => {
     return (
@@ -17,7 +18,8 @@ const Nav = () => {
                     <li className="nav-item">
                     <a className="nav-link" href="#">About</a>
                     </li>             
-                </ul>           
+                </ul> 
+                <CartIcon />          
             </div>
       </nav>  
     );
