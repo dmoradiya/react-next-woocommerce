@@ -50,7 +50,11 @@ const AddToCartButton = ( props ) => {
 		<div>
 			<button onClick={ handleAddToCartClick } className="btn btn-secondary">Add to cart</button>
 			{ showViewCart ? (
-				<Link href="/cart"><button className="woo-next-view-cart-btn btn btn-secondary">View Cart</button></Link>
+				<Link href="/cart">
+                    <button className="woo-next-view-cart-btn btn btn-secondary">
+                        View Cart
+                    </button>
+                </Link>
 			) : '' }
 
 		</div>
